@@ -6,6 +6,7 @@ metadata:
   labels:
     placement: rocketchat-placement-1
 spec:
+  storageClassName: gp3-csi
   accessModes:
     - ReadWriteOnce
   resources:
