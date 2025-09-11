@@ -6,7 +6,11 @@ metadata:
   labels:
     placement: rocketchat-placement-1
 spec:
-  storageClassName: gp3-csi
+  # --- INICIO DEL CAMBIO ---
+  {{- if .Values.persistence.storageClassName }}
+  storageClassName: {{ .Values.persistence.storageClassName }}
+  {{- end }}
+  # --- FIN DEL CAMBIO ---
   accessModes:
     - ReadWriteOnce
   resources:
